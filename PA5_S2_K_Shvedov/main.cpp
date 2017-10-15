@@ -3,6 +3,6 @@
 int main(void)
 {
     // Comment ggggggg
-	//hello
+	// Comment 2
 	return 0;
 }
