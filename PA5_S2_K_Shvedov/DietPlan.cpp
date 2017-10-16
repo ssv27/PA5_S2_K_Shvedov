@@ -94,19 +94,22 @@ void DietPlan::editGoal(int neWGoal)
 
 ostream & operator << (ostream &lhs, DietPlan &rhs)
 {
-	
+	lhs << "Plan Name: " << rhs.getName << "\n";
+	lhs << "Calorie Goal: " << rhs.getGoal << "\n";
+	lhs << "Plan Date: " << rhs.getDate << "\n";
 }
 
 fstream & operator << (fstream &lhs, DietPlan &rhs)
 {
-
+	lhs << rhs.getName << "\n";
+	lhs << rhs.getGoal << "\n";
+	lhs << rhs.getDate << "\n\n";
 }
 
 istream & operator >> (istream &lhs, DietPlan &rhs)
 {
 	int goal = 0;
 	string name = "", date = "";
-	//char *name = "", *date = "";
 
 	lhs >> goal;
 	rhs.setGoal(goal);
