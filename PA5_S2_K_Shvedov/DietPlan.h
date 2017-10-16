@@ -29,7 +29,7 @@ public:
 	void setName(string newName);
 	void setDate(string newDate);
 
-	void editGoal(int neWGoal);
+	void editGoal(DietPlan &plan);
 private:
 	int goal;
 	string name;

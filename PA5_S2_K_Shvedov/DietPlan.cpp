@@ -86,12 +86,13 @@ void DietPlan::setDate(string newDate)
 	this->date = newDate;
 }
 
-void DietPlan::editGoal(int newGoal)
+void DietPlan::editGoal(DietPlan &plan)
 {
+	int newGoal;
 	cout << "Please input new calorie goal: ";
 	cin >> newGoal;
-	setGoal(newGoal);
-	
+	plan.setGoal(newGoal);
+	cout << plan;
 }
 
 
