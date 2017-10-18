@@ -2,34 +2,45 @@
 #define COMPLEX_H
 
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using std::cin;
 using std::cout;
 using std::endl;
 using std::istream;
 using std::ostream;
+using std::ofstream;
+using std::ifstream;
+using std::string;
 
 class ExercisePlan
 {
 public:
-	ExercisePlan(int newGoal, std::string newName, std::string newDate);
+	ExercisePlan(int newGoal = 0, string newName = "Unknown", string newDate = "00/00/0000");
+	ExercisePlan(ExercisePlan &newExercisePlan);
 	~ExercisePlan();
 
 	//getters and setters
 	int getGoal() const;
-	std::string getName() const;
-	std::string getDate() const;
-	void setGoal(int newGoal);
-	void setName(std::string newName);
-	void setDate(std::string newDate);
+	string getName() const;
+	string getDate() const;
 
+	void setGoal(int newGoal);
+	void setName(string newName);
+	void setDate(string newDate);
+
+	void editGoal(ExercisePlan &plan);
 private:
 	int goal;
-	std::string name;
-	std::string date;
+	string name;
+	string date;
 };
 
 
+ostream &operator << (ostream &lhs, ExercisePlan &rhs);
+ofstream &operator << (ofstream &lhs, ExercisePlan &rhs);
+ifstream &operator >> (ifstream &lhs, ExercisePlan &rhs);
 
 
 #endif

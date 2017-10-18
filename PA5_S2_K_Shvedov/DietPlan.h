@@ -2,6 +2,7 @@
 #define COMPLEX_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 
 using std::cin;
@@ -9,7 +10,7 @@ using std::cout;
 using std::endl;
 using std::istream;
 using std::ostream;
-using std::fstream;
+using std::ofstream;
 using std::ifstream;
 using std::string;
 
@@ -36,8 +37,9 @@ private:
 	string date;
 };
 
-
-istream &operator >> (istream &lhs, DietPlan &rhs);
+ostream &operator << (ostream &lhs, DietPlan &rhs);
+ofstream &operator << (ofstream &lhs, DietPlan &rhs);
+ifstream &operator >> (ifstream &lhs, DietPlan &rhs);
 
 
 #endif

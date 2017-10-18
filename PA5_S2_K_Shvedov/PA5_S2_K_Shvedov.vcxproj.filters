@@ -21,6 +21,9 @@
     <ClCompile Include="DietPlan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ExercisePlan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DietPlan.h">
