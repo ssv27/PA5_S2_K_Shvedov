@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef DIETPLAN_H
+#define DIETPLAN_H
 
 #include <iostream>
 #include <fstream>

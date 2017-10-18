@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef EXERCISE_H
+#define EXCERCISE_H
 
 #include <iostream>
 #include <fstream>

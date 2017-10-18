@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef FITNESSAPPWRAPPER_H
+#define FITNESSAPPWRAPPER_H
 
 #include <iostream>
 #include <string>
@@ -21,7 +21,7 @@ class FitnessAppWrapper
 public:
 	FitnessAppWrapper();
 	~FitnessAppWrapper();
-
+	
 	void runApp(void);
 	void loadDailyPlan(fstream &fileStream, DietPlan &plan);
 	void loadDailyPlan(fstream &fileStream, ExercisePlan &plan);
