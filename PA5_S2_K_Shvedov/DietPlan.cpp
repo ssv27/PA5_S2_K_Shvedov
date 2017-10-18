@@ -110,7 +110,7 @@ ofstream & operator << (ofstream &lhs, DietPlan &rhs)
 	lhs << rhs.getDate << "\n\n";
 }
 
-ifstream & operator >> (ifstream &lhs, DietPlan &rhs)
+fstream & operator >> (fstream &lhs, DietPlan &rhs)
 {
 	int goal = 0;
 	string name = "", date = "";

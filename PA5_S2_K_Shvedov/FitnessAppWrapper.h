@@ -25,11 +25,13 @@ public:
 	void runApp(void);
 	void loadDailyPlan(fstream &fileStream, DietPlan &plan);
 	void loadDailyPlan(fstream &fileStream, ExercisePlan &plan);
+
 	void loadWeeklyPlan(fstream &fileStream, DietPlan weeklyPlan[]);
 	void loadWeeklyPlan(fstream &fileStream, ExercisePlan weeklyPlan[]);
 
 	void displayDailyPlan(DietPlan &plan);
 	void displayDailyPlan(ExercisePlan &plan);
+
 	void displayWeeklyPlan(DietPlan &plan);
 	void displayWeeklyPlan(ExercisePlan &plan);
 
@@ -40,8 +42,8 @@ public:
 	void storeWeeklyPlan();
 
 private:
-	DietPlan weeklyDietPlan[];
-	ExercisePlan weeklyDietPlan[];
+	DietPlan weeklyDietPlan[7];
+	ExercisePlan weeklyDietPlan[7];
 };
 
 
