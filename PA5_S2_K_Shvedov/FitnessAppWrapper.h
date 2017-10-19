@@ -21,15 +21,11 @@ class FitnessAppWrapper
 public:
 	FitnessAppWrapper();
 	~FitnessAppWrapper();
-<<<<<<< HEAD
-
 
 	void setDietPlan(DietPlan &newDietPlan);
 	void setExercizePlan(ExercisePlan &newExercisePlan);
 
-=======
-	
->>>>>>> c3257a20dd1d3218265b4cdfe26234621c5f17a2
+
 	void runApp(void);
 	void loadDailyPlan(fstream &fileStream, DietPlan &plan);
 	void loadDailyPlan(fstream &fileStream, ExercisePlan &plan);

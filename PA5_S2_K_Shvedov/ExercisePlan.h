@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 #ifndef EXERCISEPLAN_H
 #define EXERCISEPLAN_H
-=======
-#ifndef EXERCISE_H
-#define EXCERCISE_H
->>>>>>> c3257a20dd1d3218265b4cdfe26234621c5f17a2
 
 #include <iostream>
 #include <fstream>
