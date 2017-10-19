@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef FITNESSAPPWRAPPER_H
+#define FITNESSAPPWRAPPER_H
 
 #include <iostream>
 #include <string>
@@ -22,6 +22,10 @@ public:
 	FitnessAppWrapper();
 	~FitnessAppWrapper();
 
+
+	void setDietPlan(DietPlan &newDietPlan);
+	void setExercizePlan(ExercisePlan &newExercisePlan);
+
 	void runApp(void);
 	void loadDailyPlan(fstream &fileStream, DietPlan &plan);
 	void loadDailyPlan(fstream &fileStream, ExercisePlan &plan);
@@ -35,15 +39,17 @@ public:
 	void displayWeeklyPlan(DietPlan &plan);
 	void displayWeeklyPlan(ExercisePlan &plan);
 
-	void storeDailyPlan();
-	void storeDailyPlan();
+	void storeDailyPlan(DietPlan &plan);
+	void storeDailyPlan(ExercisePlan &plan);
 
-	void storeWeeklyPlan();
-	void storeWeeklyPlan();
+	void storeWeeklyPlan(DietPlan &plan);
+	void storeWeeklyPlan(ExercisePlan &plan);
+
+	void displayMenu(void);
 
 private:
 	DietPlan weeklyDietPlan[7];
-	ExercisePlan weeklyDietPlan[7];
+	ExercisePlan weeklyExercisePlan[7];
 };
 
 

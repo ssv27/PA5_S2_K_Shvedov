@@ -1,5 +1,5 @@
-#ifndef COMPLEX_H
-#define COMPLEX_H
+#ifndef EXERCISEPLAN_H
+#define EXERCISEPLAN_H
 
 #include <iostream>
 #include <fstream>
@@ -32,9 +32,9 @@ public:
 
 	void editGoal(ExercisePlan &plan);
 private:
-	int goal;
-	string name;
-	string date;
+	int mGoal;
+	string mName;
+	string mDate;
 };
 
 
