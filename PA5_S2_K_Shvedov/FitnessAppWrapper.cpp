@@ -10,72 +10,80 @@ FitnessAppWrapper::~FitnessAppWrapper()
 	//empty
 }
 
-
-void FitnessAppWrapper::setDietPlan(DietPlan &newDietPlan)
-{
-
-}
-void FitnessAppWrapper::setExercizePlan(ExercisePlan &newExercisePlan)
-{
-
-}
-
 void FitnessAppWrapper::runApp(void)
 {
 
 }
 void FitnessAppWrapper::loadDailyPlan(fstream &fileStream, DietPlan &plan)
 {
-
+	fileStream >> plan;
 }
 void FitnessAppWrapper::loadDailyPlan(fstream &fileStream, ExercisePlan &plan)
 {
-
+	fileStream >> plan;;
 }
 
 void FitnessAppWrapper::loadWeeklyPlan(fstream &fileStream, DietPlan weeklyPlan[])
 {
-
+	for (int i = 0; i < 7; i++)
+	{
+		loadDailyPlan(fileStream, weeklyPlan[i]);
+	}
 }
 void FitnessAppWrapper::loadWeeklyPlan(fstream &fileStream, ExercisePlan weeklyPlan[])
 {
-
+	for (int i = 0; i < 7; i++)
+	{
+		loadDailyPlan(fileStream, weeklyPlan[i]);
+	}
 }
 
 void FitnessAppWrapper::displayDailyPlan(DietPlan &plan)
 {
-
+	cout << plan;
 }
 void FitnessAppWrapper::displayDailyPlan(ExercisePlan &plan)
 {
-
+	cout << plan;
 }
 
-void FitnessAppWrapper::displayWeeklyPlan(DietPlan &plan)
+void FitnessAppWrapper::displayWeeklyPlan(DietPlan weeklyPlan[])
 {
-
+	for (int i = 0; i < 7; i++)
+	{
+		displayDailyPlan(weeklyPlan[i]);
+	}
 }
-void FitnessAppWrapper::displayWeeklyPlan(ExercisePlan &plan)
+void FitnessAppWrapper::displayWeeklyPlan(ExercisePlan weeklyPlan[])
 {
-
-}
-
-void FitnessAppWrapper::storeDailyPlan(DietPlan &plan)
-{
-
-}
-void FitnessAppWrapper::storeDailyPlan(ExercisePlan &plan)
-{
-
+	for (int i = 0; i < 7; i++)
+	{
+		displayDailyPlan(weeklyPlan[i]);
+	}
 }
 
-void FitnessAppWrapper::storeWeeklyPlan(DietPlan &plan)
+void FitnessAppWrapper::storeDailyPlan(ofstream &fileStream, DietPlan &plan)
 {
-
+	fileStream << plan;
 }
-void FitnessAppWrapper::storeWeeklyPlan(ExercisePlan &plan)
+void FitnessAppWrapper::storeDailyPlan(ofstream &fileStream, ExercisePlan &plan)
 {
+	fileStream << plan;
+}
 
+void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, DietPlan &plan)
+{
+	for (int i = 0; i < 7; i++)
+	{
+		storeDailyPlan(fileStream, plan);
+	}
+}
+void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, ExercisePlan &plan)
+{
+	for (int i = 0; i < 7; i++)
+	{
+		storeDailyPlan(fileStream, plan);
+	}
 }
 
 void FitnessAppWrapper::displayMenu(void)
