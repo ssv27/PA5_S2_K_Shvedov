@@ -88,14 +88,14 @@ void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, ExercisePlan &plan
 
 void FitnessAppWrapper::displayMenu(void)
 {
-	cout << "MAIN MENU";
-	cout << "1.    Load weekly diet plan from file\n";
-	cout << "2.    Load weekly exercise plan from file\n";
-	cout << "3.    Store weekly diet plan to file\n";
-	cout << "4.    Store weekly exercise plan to file\n";
-	cout << "5.    Display weekly diet plan to screen\n";
-	cout << "6.    Display weekly exercise plan to screen\n";
-	cout << "7.    Edit daily diet plan\n";
-	cout << "8.    Edit daily exercise plan\n";
-	cout << "9.    Exit\n";
+	cout << "\t\tMAIN MENU\n";
+	cout << "\t1.    Load weekly diet plan from file\n";
+	cout << "\t2.    Load weekly exercise plan from file\n";
+	cout << "\t3.    Store weekly diet plan to file\n";
+	cout << "\t4.    Store weekly exercise plan to file\n";
+	cout << "\t5.    Display weekly diet plan to screen\n";
+	cout << "\t6.    Display weekly exercise plan to screen\n";
+	cout << "\t7.    Edit daily diet plan\n";
+	cout << "\t8.    Edit daily exercise plan\n";
+	cout << "\t9.    Exit\n";
 }
