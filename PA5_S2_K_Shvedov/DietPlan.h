@@ -11,7 +11,7 @@ using std::endl;
 using std::istream;
 using std::ostream;
 using std::ofstream;
-using std::fstream;
+using std::ifstream;
 using std::string;
 
 class DietPlan
@@ -39,7 +39,7 @@ private:
 
 ostream &operator << (ostream &lhs, DietPlan &rhs);
 ofstream &operator << (ofstream &lhs, DietPlan &rhs);
-fstream &operator >> (fstream &lhs, DietPlan &rhs);
+ifstream &operator >> (ifstream &lhs, DietPlan &rhs);
 
 
 #endif

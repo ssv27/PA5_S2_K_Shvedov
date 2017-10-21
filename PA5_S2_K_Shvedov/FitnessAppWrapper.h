@@ -23,11 +23,11 @@ public:
 	~FitnessAppWrapper();
 
 	void runApp(void);
-	void loadDailyPlan(fstream &fileStream, DietPlan &plan);
-	void loadDailyPlan(fstream &fileStream, ExercisePlan &plan);
+	void loadDailyPlan(ifstream &fileStream, DietPlan &plan);
+	void loadDailyPlan(ifstream &fileStream, ExercisePlan &plan);
 
-	void loadWeeklyPlan(fstream &fileStream, DietPlan weeklyPlan[]);
-	void loadWeeklyPlan(fstream &fileStream, ExercisePlan weeklyPlan[]);
+	void loadWeeklyPlan(ifstream &fileStream, DietPlan weeklyPlan[]);
+	void loadWeeklyPlan(ifstream &fileStream, ExercisePlan weeklyPlan[]);
 
 	void displayDailyPlan(DietPlan &plan);
 	void displayDailyPlan(ExercisePlan &plan);
@@ -38,8 +38,8 @@ public:
 	void storeDailyPlan(ofstream &fileStream, DietPlan &plan);
 	void storeDailyPlan(ofstream &fileStream, ExercisePlan &plan);
 
-	void storeWeeklyPlan(ofstream &fileStream, DietPlan &plan);
-	void storeWeeklyPlan(ofstream &fileStream, ExercisePlan &plan);
+	void storeWeeklyPlan(ofstream &fileStream, DietPlan plan[]);
+	void storeWeeklyPlan(ofstream &fileStream, ExercisePlan plan[]);
 
 	void displayMenu(void);
 
