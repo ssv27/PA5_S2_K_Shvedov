@@ -1,15 +1,26 @@
+/*
+* Programmer: Konstantin Shvedov
+* Class: CptS 122
+* Programming Assignment: PA5
+* Date: 20/10/2017
+* Description: This is where all functions that make the app work are called
+*/
+
 #include "FitnessAppWrapper.h"
 
+//Empty constructor
 FitnessAppWrapper::FitnessAppWrapper()
 {
 	//empty
 }
 
+//self used destructor
 FitnessAppWrapper::~FitnessAppWrapper()
 {
 	//empty
 }
 
+//main app that makes the whole program run
 void FitnessAppWrapper::runApp(void)
 {
 	int choice = 0, k = 0;
@@ -25,6 +36,8 @@ void FitnessAppWrapper::runApp(void)
 		cin >> choice;
 		cout << endl;
 		system("cls");
+
+		//displays weekly plan for diet
 		if (choice == 1)
 		{
 			ifstream file;
@@ -40,6 +53,7 @@ void FitnessAppWrapper::runApp(void)
 				cout << "There was an error reading file" << endl;
 			}
 		}
+		//displays weekly plan for exersise
 		else if (choice == 2)
 		{
 			ifstream file;
@@ -55,6 +69,7 @@ void FitnessAppWrapper::runApp(void)
 				cout << "There was an error reading file" << endl;
 			}
 		}
+		//stroes weekly plan for diet to file
 		else if (choice == 3)
 		{
 			cout << "Storing Plan" << endl;
@@ -72,6 +87,7 @@ void FitnessAppWrapper::runApp(void)
 			}
 
 		}
+		//stores weekly plan for exersise to file
 		else if (choice == 4)
 		{
 			cout << "Storing Plan" << endl;
@@ -89,14 +105,17 @@ void FitnessAppWrapper::runApp(void)
 			}
 
 		}
+		//displays weekly plan for diet
 		else if (choice == 5)
 		{
 			displayWeeklyPlan(dPlan);
 		}
+		//displays weekly plan for exersise
 		else if (choice == 6)
 		{
 			displayWeeklyPlan(ePlan);
 		}
+		//Lets user choose what day of the plan to edit and lets them edit it
 		else if (choice == 7)
 		{
 			displayWeeklyPlan(dPlan);
@@ -107,6 +126,7 @@ void FitnessAppWrapper::runApp(void)
 			displayDailyPlan(dPlan[k - 1]);
 			dPlan[k - 1].editPlan();
 		}
+		//Lets user choose what day of the plan to edit and lets them edit it
 		else if (choice == 8)
 		{
 			displayWeeklyPlan(ePlan);
@@ -117,6 +137,7 @@ void FitnessAppWrapper::runApp(void)
 			displayDailyPlan(ePlan[k - 1]);
 			ePlan[k - 1].editPlan();
 		}
+		//exits the app
 		else if (choice == 9)
 		{
 			cout << endl << "Thank you for using this program!" << endl << endl;
@@ -131,15 +152,20 @@ void FitnessAppWrapper::runApp(void)
 	}
 
 }
+
+//loads plan for a day for diet
 void FitnessAppWrapper::loadDailyPlan(ifstream &fileStream, DietPlan &plan)
 {
 	fileStream >> plan;
 }
+
+//loads plan for a day for diet
 void FitnessAppWrapper::loadDailyPlan(ifstream &fileStream, ExercisePlan &plan)
 {
 	fileStream >> plan;
 }
 
+//loads plan for a week for diet
 void FitnessAppWrapper::loadWeeklyPlan(ifstream &fileStream, DietPlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -147,6 +173,8 @@ void FitnessAppWrapper::loadWeeklyPlan(ifstream &fileStream, DietPlan weeklyPlan
 		loadDailyPlan(fileStream, weeklyPlan[i]);
 	}
 }
+
+//loads plan for a week for diet
 void FitnessAppWrapper::loadWeeklyPlan(ifstream &fileStream, ExercisePlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -155,15 +183,19 @@ void FitnessAppWrapper::loadWeeklyPlan(ifstream &fileStream, ExercisePlan weekly
 	}
 }
 
+//displays one day of plan to screen
 void FitnessAppWrapper::displayDailyPlan(DietPlan &plan)
 {
 	cout << plan;
 }
+
+//displays one day of plan to screen
 void FitnessAppWrapper::displayDailyPlan(ExercisePlan &plan)
 {
 	cout << plan;
 }
 
+//displays all plans for a week to screen
 void FitnessAppWrapper::displayWeeklyPlan(DietPlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -172,6 +204,8 @@ void FitnessAppWrapper::displayWeeklyPlan(DietPlan weeklyPlan[])
 		displayDailyPlan(weeklyPlan[i]);
 	}
 }
+
+//displays all plans for a week to screen
 void FitnessAppWrapper::displayWeeklyPlan(ExercisePlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -181,15 +215,19 @@ void FitnessAppWrapper::displayWeeklyPlan(ExercisePlan weeklyPlan[])
 	}
 }
 
+//stores the plan for the day to file
 void FitnessAppWrapper::storeDailyPlan(ofstream &fileStream, DietPlan &plan)
 {
 	fileStream << plan;
 }
+
+//stores the plan for the day to file
 void FitnessAppWrapper::storeDailyPlan(ofstream &fileStream, ExercisePlan &plan)
 {
 	fileStream << plan;
 }
 
+//stores the plan for the week to file
 void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, DietPlan plan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -197,6 +235,8 @@ void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, DietPlan plan[])
 		storeDailyPlan(fileStream, plan[i]);
 	}
 }
+
+//stores the plan for the week to file
 void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, ExercisePlan plan[])
 {
 	for (int i = 0; i < 7; i++)
@@ -205,6 +245,7 @@ void FitnessAppWrapper::storeWeeklyPlan(ofstream &fileStream, ExercisePlan plan[
 	}
 }
 
+//displays menu
 void FitnessAppWrapper::displayMenu(void)
 {
 	cout << "\tMAIN MENU\n";

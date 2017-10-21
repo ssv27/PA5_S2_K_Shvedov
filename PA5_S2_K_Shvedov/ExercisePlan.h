@@ -1,3 +1,10 @@
+/*
+* Programmer: Konstantin Shvedov
+* Class: CptS 122
+* Programming Assignment: PA5
+* Date: 20/10/2017
+* Description: This is where all the prototypes for functions for Exercise Plan are
+*/
 #ifndef EXERCISEPLAN_H
 #define EXERCISEPLAN_H
 
