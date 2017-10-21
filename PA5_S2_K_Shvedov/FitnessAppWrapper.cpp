@@ -21,9 +21,10 @@ void FitnessAppWrapper::runApp(void)
 	while (choice != 9)
 	{
 		displayMenu();
-		cout << "\nPlease select an option: ";
+		cout << "\nPlease select an option (1-9): ";
 		cin >> choice;
 		cout << endl;
+		system("cls");
 		if (choice == 1)
 		{
 			ifstream file;
@@ -56,12 +57,14 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 3)
 		{
+			cout << "Storing Plan" << endl;
 			ofstream file;
 			file.open("dietPlans.txt");
 			if (file.is_open())
 			{
 				storeWeeklyPlan(file, dPlan);
 				file.close();
+				cout << "Plan Stored!" << endl;
 			}
 			else
 			{
@@ -71,12 +74,14 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 4)
 		{
+			cout << "Storing Plan" << endl;
 			ofstream file;
 			file.open("exercisePlans.txt");
 			if (file.is_open())
 			{
 				storeWeeklyPlan(file, ePlan);
 				file.close();
+				cout << "Plan Stored!" << endl;
 			}
 			else
 			{
@@ -94,9 +99,8 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 7)
 		{
-			system("cls");
 			displayWeeklyPlan(dPlan);
-			cout << "Which Diet Plan would you like to edit: ";
+			cout << "Which Diet Plan would you like to edit (1-7): ";
 			cin >> k;
 			cout << endl;
 			system("cls");
@@ -105,9 +109,8 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 8)
 		{
-			system("cls");
 			displayWeeklyPlan(ePlan);
-			cout << "Which Exercise Plan would you like to edit: ";
+			cout << "Which Exercise Plan would you like to edit (1-7): ";
 			cin >> k;
 			cout << endl;
 			system("cls");
@@ -116,7 +119,7 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 9)
 		{
-			cout << endl << "Thank you for using this program!" << endl;
+			cout << endl << "Thank you for using this program!" << endl << endl;
 			return;
 		}
 		if (choice != 9)

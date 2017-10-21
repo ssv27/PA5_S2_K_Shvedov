@@ -98,7 +98,7 @@ void DietPlan::editGoal()
 void DietPlan::editName()
 {
 	string newName;
-	cout << "Please input new Name: ";
+	cout << "Please input new Name (no spaces): ";
 	cin >> newName;
 	this->setName(newName);
 	cout << endl;
@@ -107,7 +107,7 @@ void DietPlan::editName()
 void DietPlan::editDate()
 {
 	string newDate;
-	cout << "Please input new Date: ";
+	cout << "Please input new Date (mm/dd/yyyy format): ";
 	cin >> newDate;
 	this->setDate(newDate);
 	cout << endl;
