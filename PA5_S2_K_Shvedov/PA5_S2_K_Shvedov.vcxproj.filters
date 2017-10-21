@@ -24,6 +24,9 @@
     <ClCompile Include="ExercisePlan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FitnessAppWrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DietPlan.h">
@@ -35,5 +38,13 @@
     <ClInclude Include="FitnessAppWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="dietPlans.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="exercisePlans.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

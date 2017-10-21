@@ -19,9 +19,9 @@ Postconditions : None
 */
 DietPlan::DietPlan(int newGoal, string newName, string newDate)
 {
-	this->goal = newGoal;
-	this->name = newName;
-	this->date = newDate;
+	this->mGoal = newGoal;
+	this->mName = newName;
+	this->mDate = newDate;
 }
 
 /*
@@ -36,9 +36,9 @@ Postconditions : None
 */
 DietPlan::DietPlan(DietPlan &newDietPlan)
 {
-	goal = newDietPlan.goal;
-	name = newDietPlan.name;
-	date = newDietPlan.date;
+	mGoal = newDietPlan.mGoal;
+	mName = newDietPlan.mName;
+	mDate = newDietPlan.mDate;
 }
 
 /*
@@ -53,73 +53,101 @@ Postconditions : None
 */
 DietPlan::~DietPlan()
 {
-	cout << "Inside of DietPlan destructor!" << endl;
+	//cout << "Inside of DietPlan destructor!" << endl;
 }
 
 int DietPlan::getGoal() const
 {
-	return goal;
+	return mGoal;
 }
 
 string DietPlan::getName() const
 {
-	return name;
+	return mName;
 }
 
 string DietPlan::getDate() const
 {
-	return date;
+	return mDate;
 }
 
 void DietPlan::setGoal(int newGoal)
 {
-	this->goal = newGoal;
+	mGoal = newGoal;
 }
 
 void DietPlan::setName(string newName)
 {
-	this->name = newName;
+	mName = newName;
 }
 
 void DietPlan::setDate(string newDate)
 {
-	this->date = newDate;
+	mDate = newDate;
 }
 
-void DietPlan::editGoal(DietPlan &plan)
+void DietPlan::editGoal()
 {
 	int newGoal;
-	cout << "Please input new calorie goal: ";
+	cout << "Please input new calorie Goal: ";
 	cin >> newGoal;
-	plan.setGoal(newGoal);
-	cout << plan;
+	this->setGoal(newGoal);
+	cout << endl;
 }
 
+void DietPlan::editName()
+{
+	string newName;
+	cout << "Please input new Name: ";
+	cin >> newName;
+	this->setName(newName);
+	cout << endl;
+}
+
+void DietPlan::editDate()
+{
+	string newDate;
+	cout << "Please input new Date: ";
+	cin >> newDate;
+	this->setDate(newDate);
+	cout << endl;
+}
+
+void DietPlan::editPlan()
+{
+	this->editName();
+	this->editGoal();
+	this->editDate();
+}
 
 ostream & operator << (ostream &lhs, DietPlan &rhs)
 {
-	lhs << "Plan Name: " << rhs.getName << "\n";
-	lhs << "Calorie Goal: " << rhs.getGoal << "\n";
-	lhs << "Plan Date: " << rhs.getDate << "\n";
+	lhs << "Plan Name: " << rhs.getName() << "\n";
+	lhs << "Calorie Goal: " << rhs.getGoal() << "\n";
+	lhs << "Plan Date: " << rhs.getDate() << "\n\n";
+	return lhs;
 }
 
 ofstream & operator << (ofstream &lhs, DietPlan &rhs)
 {
-	lhs << rhs.getName << "\n";
-	lhs << rhs.getGoal << "\n";
-	lhs << rhs.getDate << "\n\n";
+	lhs << rhs.getName() << "\n";
+	lhs << rhs.getGoal() << "\n";
+	lhs << rhs.getDate() << "\n\n";
+	return lhs;
 }
 
-fstream & operator >> (fstream &lhs, DietPlan &rhs)
+ifstream & operator >> (ifstream &lhs, DietPlan &rhs)
 {
 	int goal = 0;
 	string name = "", date = "";
 
-	lhs >> goal;
-	rhs.setGoal(goal);
 	lhs >> name;
 	rhs.setName(name);
+	lhs >> goal;
+	rhs.setGoal(goal);
 	lhs >> date;
 	rhs.setDate(date);
+
+	return lhs;
 }
 
