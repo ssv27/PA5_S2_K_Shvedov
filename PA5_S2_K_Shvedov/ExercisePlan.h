@@ -30,7 +30,11 @@ public:
 	void setName(string newName);
 	void setDate(string newDate);
 
-	void editGoal(ExercisePlan &plan);
+	void editGoal();
+	void editName();
+	void editDate();
+
+	void editPlan();
 private:
 	int mGoal;
 	string mName;

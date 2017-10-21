@@ -12,7 +12,7 @@ FitnessAppWrapper::~FitnessAppWrapper()
 
 void FitnessAppWrapper::runApp(void)
 {
-	int choice = 0;
+	int choice = 0, k = 0;
 	ExercisePlan ePlan[7];
 	DietPlan dPlan[7];
 	cout << "Welcome to The Fitness App" << endl;
@@ -23,6 +23,7 @@ void FitnessAppWrapper::runApp(void)
 		displayMenu();
 		cout << "\nPlease select an option: ";
 		cin >> choice;
+		cout << endl;
 		if (choice == 1)
 		{
 			ifstream file;
@@ -93,11 +94,25 @@ void FitnessAppWrapper::runApp(void)
 		}
 		else if (choice == 7)
 		{
-
+			system("cls");
+			displayWeeklyPlan(dPlan);
+			cout << "Which Diet Plan would you like to edit: ";
+			cin >> k;
+			cout << endl;
+			system("cls");
+			displayDailyPlan(dPlan[k - 1]);
+			dPlan[k - 1].editPlan();
 		}
 		else if (choice == 8)
 		{
-
+			system("cls");
+			displayWeeklyPlan(ePlan);
+			cout << "Which Exercise Plan would you like to edit: ";
+			cin >> k;
+			cout << endl;
+			system("cls");
+			displayDailyPlan(ePlan[k - 1]);
+			ePlan[k - 1].editPlan();
 		}
 		else if (choice == 9)
 		{
@@ -150,6 +165,7 @@ void FitnessAppWrapper::displayWeeklyPlan(DietPlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
 	{
+		cout << "Diet Plan " << i + 1 << endl;
 		displayDailyPlan(weeklyPlan[i]);
 	}
 }
@@ -157,6 +173,7 @@ void FitnessAppWrapper::displayWeeklyPlan(ExercisePlan weeklyPlan[])
 {
 	for (int i = 0; i < 7; i++)
 	{
+		cout << "Exercise Plan " << i + 1 << endl;
 		displayDailyPlan(weeklyPlan[i]);
 	}
 }
