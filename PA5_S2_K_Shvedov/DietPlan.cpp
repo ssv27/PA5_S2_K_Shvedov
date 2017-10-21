@@ -56,36 +56,106 @@ DietPlan::~DietPlan()
 	//cout << "Inside of DietPlan destructor!" << endl;
 }
 
+/*
+Function: int DietPlan::getGoal() const
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : gets goal
+Input parameters : none
+Returns : goal
+Precondition : Call function
+Postconditions : None
+*/
 int DietPlan::getGoal() const
 {
 	return mGoal;
 }
 
+/*
+Function: int DietPlan::getName() const
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : gets Name
+Input parameters : none
+Returns : name
+Precondition : Call function
+Postconditions : None
+*/
 string DietPlan::getName() const
 {
 	return mName;
 }
 
+/*
+Function: int DietPlan::getDate() const
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : gets date
+Input parameters : none
+Returns : date
+Precondition : Call function
+Postconditions : None
+*/
 string DietPlan::getDate() const
 {
 	return mDate;
 }
 
+/*
+Function: void DietPlan::setGoal(int newGoal)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : sets goal
+Input parameters : newGoal
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::setGoal(int newGoal)
 {
-	mGoal = newGoal;
+	this->mGoal = newGoal;
 }
 
+/*
+Function: void DietPlan::setName(int newGoal)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : sets name
+Input parameters : string newName
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::setName(string newName)
 {
-	mName = newName;
+	this->mName = newName;
 }
 
+/*
+Function: void DietPlan::setDate(int newGoal)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : sets Date
+Input parameters : string newDate
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::setDate(string newDate)
 {
-	mDate = newDate;
+	this->mDate = newDate;
 }
 
+/*
+Function: void DietPlan::editGoal()
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : edits goal
+Input parameters : none
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::editGoal()
 {
 	int newGoal;
@@ -95,6 +165,16 @@ void DietPlan::editGoal()
 	cout << endl;
 }
 
+/*
+Function: void DietPlan::editName()
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : edits name
+Input parameters : none
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::editName()
 {
 	string newName;
@@ -104,6 +184,16 @@ void DietPlan::editName()
 	cout << endl;
 }
 
+/*
+Function: void DietPlan::editDate()
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : edits date
+Input parameters : none
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::editDate()
 {
 	string newDate;
@@ -113,6 +203,16 @@ void DietPlan::editDate()
 	cout << endl;
 }
 
+/*
+Function: void DietPlan::editPlan()
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : function in charge of calling all edits for a plan
+Input parameters : none
+Returns : none
+Precondition : Call function
+Postconditions : None
+*/
 void DietPlan::editPlan()
 {
 	this->editName();
@@ -120,6 +220,16 @@ void DietPlan::editPlan()
 	this->editDate();
 }
 
+/*
+Function: ostream & operator << (ostream &lhs, DietPlan &rhs)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : Overloads an operator to print a plan to screen
+Input parameters : ostream &lhs, DietPlan &rhs
+Returns : ostream
+Precondition : Call function
+Postconditions : None
+*/
 ostream & operator << (ostream &lhs, DietPlan &rhs)
 {
 	lhs << "Plan Name: " << rhs.getName() << "\n";
@@ -128,6 +238,16 @@ ostream & operator << (ostream &lhs, DietPlan &rhs)
 	return lhs;
 }
 
+/*
+ofstream & operator << (ofstream &lhs, DietPlan &rhs)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : Overloads an operator to print a plan to file
+Input parameters : oftream &lhs, DietPlan &rhs
+Returns : ofstream
+Precondition : Call function
+Postconditions : None
+*/
 ofstream & operator << (ofstream &lhs, DietPlan &rhs)
 {
 	lhs << rhs.getName() << "\n";
@@ -136,6 +256,16 @@ ofstream & operator << (ofstream &lhs, DietPlan &rhs)
 	return lhs;
 }
 
+/*
+ifstream & operator >> (ifstream &lhs, DietPlan &rhs)
+Date Created : 08 / 10 / 2017
+Date Last Modified : 20 / 10 / 2017
+Description : Overloads an operator to read plan from file
+Input parameters : iftream &lhs, DietPlan &rhs
+Returns : ifstream
+Precondition : Call function
+Postconditions : None
+*/
 ifstream & operator >> (ifstream &lhs, DietPlan &rhs)
 {
 	int goal = 0;
